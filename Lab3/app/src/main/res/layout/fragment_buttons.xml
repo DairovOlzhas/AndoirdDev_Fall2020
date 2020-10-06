@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/erace"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/sign"
+        app:layout_constraintBottom_toTopOf="@id/num1"
+
+        style="@style/OperButton"
+        android:tag="clearButton"
+        android:text="C" />
+
+    <Button
+        android:id="@+id/sign"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/erace"
+        app:layout_constraintRight_toLeftOf="@id/percent"
+        app:layout_constraintBottom_toTopOf="@id/num2"
+
+        style="@style/OperButton"
+        android:tag="changeSignButton"
+        android:text="+-" />
+
+    <Button
+        android:id="@+id/percent"
+        style="@style/OperButton"
+        android:tag="percentButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/sign"
+        app:layout_constraintRight_toLeftOf="@id/divide"
+        app:layout_constraintBottom_toTopOf="@id/num3"
+
+        android:text="%" />
+
+    <Button
+        android:id="@+id/divide"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/percent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/multiply"
+        style="@style/OperButton"
+        android:text="/" />
+
+    <Button
+        android:id="@+id/num1"
+        app:layout_constraintTop_toBottomOf="@id/erace"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/num2"
+        app:layout_constraintBottom_toTopOf="@id/num4"
+        style="@style/NumButton"
+        android:text="1" />
+
+    <Button
+        android:id="@+id/num2"
+        app:layout_constraintTop_toBottomOf="@id/sign"
+        app:layout_constraintLeft_toRightOf="@id/num1"
+        app:layout_constraintRight_toLeftOf="@id/num3"
+        app:layout_constraintBottom_toTopOf="@id/num5"
+        style="@style/NumButton"
+        android:text="2" />
+
+    <Button
+        android:id="@+id/num3"
+        app:layout_constraintTop_toBottomOf="@id/percent"
+        app:layout_constraintLeft_toRightOf="@id/num2"
+        app:layout_constraintRight_toLeftOf="@id/multiply"
+        app:layout_constraintBottom_toTopOf="@id/num6"
+        style="@style/NumButton"
+        android:text="3" />
+
+    <Button
+        android:id="@+id/multiply"
+        app:layout_constraintTop_toBottomOf="@id/divide"
+        app:layout_constraintLeft_toRightOf="@id/num3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/minus"
+        style="@style/OperButton"
+        android:text="*" />
+
+    <Button
+        android:id="@+id/num4"
+        app:layout_constraintTop_toBottomOf="@id/num1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/num5"
+        app:layout_constraintBottom_toTopOf="@id/num7"
+        style="@style/NumButton"
+        android:text="4" />
+
+    <Button
+        android:id="@+id/num5"
+        app:layout_constraintTop_toBottomOf="@id/num2"
+        app:layout_constraintLeft_toRightOf="@id/num4"
+        app:layout_constraintRight_toLeftOf="@id/num6"
+        app:layout_constraintBottom_toTopOf="@id/num8"
+        style="@style/NumButton"
+        android:text="5" />
+
+    <Button
+        android:id="@+id/num6"
+        app:layout_constraintTop_toBottomOf="@id/num3"
+        app:layout_constraintLeft_toRightOf="@id/num5"
+        app:layout_constraintRight_toLeftOf="@id/minus"
+        app:layout_constraintBottom_toTopOf="@id/num9"
+        style="@style/NumButton"
+        android:text="6" />
+
+    <Button
+        android:id="@+id/minus"
+        app:layout_constraintTop_toBottomOf="@id/multiply"
+        app:layout_constraintLeft_toRightOf="@id/num6"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/plus"
+        style="@style/OperButton"
+        android:text="-" />
+
+    <Button
+        android:id="@+id/num7"
+        app:layout_constraintTop_toBottomOf="@id/num4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/num8"
+        app:layout_constraintBottom_toTopOf="@id/num0"
+        style="@style/NumButton"
+        android:text="7" />
+
+    <Button
+        android:id="@+id/num8"
+        app:layout_constraintTop_toBottomOf="@id/num5"
+        app:layout_constraintLeft_toRightOf="@id/num7"
+        app:layout_constraintRight_toLeftOf="@id/num9"
+        app:layout_constraintBottom_toTopOf="@id/idle"
+        style="@style/NumButton"
+        android:text="8" />
+
+    <Button
+        android:id="@+id/num9"
+        app:layout_constraintTop_toBottomOf="@id/num6"
+        app:layout_constraintLeft_toRightOf="@id/num8"
+        app:layout_constraintRight_toLeftOf="@id/plus"
+        app:layout_constraintBottom_toTopOf="@id/numDot"
+        style="@style/NumButton"
+        android:text="9" />
+
+    <Button
+        android:id="@+id/plus"
+        app:layout_constraintTop_toBottomOf="@id/minus"
+        app:layout_constraintLeft_toRightOf="@id/num9"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/result"
+        style="@style/OperButton"
+        android:text="+" />
+
+    <Button
+        android:id="@+id/num0"
+        app:layout_constraintTop_toBottomOf="@id/num7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/idle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/NumButton"
+        android:text="0" />
+    <Button
+        android:id="@+id/idle"
+        app:layout_constraintTop_toBottomOf="@id/num8"
+        app:layout_constraintLeft_toRightOf="@id/num0"
+        app:layout_constraintRight_toLeftOf="@id/numDot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:clickable="false"
+        style="@style/NumButton"
+        />
+    <Button
+        android:id="@+id/numDot"
+        app:layout_constraintTop_toBottomOf="@id/num9"
+        app:layout_constraintLeft_toRightOf="@id/idle"
+        app:layout_constraintRight_toLeftOf="@id/result"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/NumButton"
+        android:tag="dotButton"
+        android:text="." />
+
+    <Button
+        android:id="@+id/result"
+        app:layout_constraintTop_toBottomOf="@id/plus"
+        app:layout_constraintLeft_toRightOf="@id/numDot"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/EqualButton"
+        android:tag="resButton"
+        android:text="=" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
