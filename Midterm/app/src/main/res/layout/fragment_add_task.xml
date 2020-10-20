@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="20dp">
+
+    <EditText
+        android:id="@+id/edittitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/editdescription"
+        android:hint="title" />
+    <EditText
+        android:id="@+id/editdescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/edittitle"
+        app:layout_constraintBottom_toTopOf="@+id/editstatus"
+        android:hint="description" />
+    <EditText
+        android:id="@+id/editstatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/editdescription"
+        app:layout_constraintBottom_toTopOf="@+id/editcategory"
+        android:hint="status" />
+    <EditText
+        android:id="@+id/editcategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/editstatus"
+        app:layout_constraintBottom_toTopOf="@+id/editduration"
+        android:hint="category" />
+    <EditText
+        android:id="@+id/editduration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/editcategory"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:hint="duration" />
+
+    <Button
+        android:id="@+id/createtask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/editduration"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="onClick"
+        android:text="Create Task"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

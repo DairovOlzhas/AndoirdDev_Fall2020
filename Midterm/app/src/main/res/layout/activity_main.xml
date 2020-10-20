@@ -9,26 +9,8 @@
     <FrameLayout
         android:id="@+id/task_container"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/craetetask"
-        app:layout_constraintVertical_weight="9"
+        android:layout_height="match_parent"
         />
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/recycleview"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"/>-->
 
-
-    <Button
-        android:id="@+id/craetetask"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintVertical_weight="1"
-        app:layout_constraintTop_toBottomOf="@+id/task_container"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:onClick="onClick"
-        android:text="Add Task"
-        />
 </androidx.constraintlayout.widget.ConstraintLayout>

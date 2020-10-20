@@ -1,6 +1,7 @@
 package com.example.midterm
 
 import android.content.Context
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +10,11 @@ import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 
-class TaskListAdapter(val tasks: ArrayList<Task>, val context: Context): RecyclerView.Adapter<TaskListAdapter.MyViewHolder>() {
+class TaskListAdapter(
+    val tasks: ArrayList<Task>,
+    val context: Context,
+    val clickListener: ClickListener
+) : RecyclerView.Adapter<TaskListAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.recycle_view, parent, false)
         return MyViewHolder(view)
@@ -20,6 +25,10 @@ class TaskListAdapter(val tasks: ArrayList<Task>, val context: Context): Recycle
         holder.titleText.text = task.title
         holder.statusText.text = task.status
         holder.categoryText.text = task.category
+
+        holder.itemView.setOnClickListener{
+            clickListener.onClickListener(task)
+        }
     }
 
     override fun getItemCount(): Int {
