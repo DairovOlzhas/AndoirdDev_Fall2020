@@ -23,15 +23,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClick(view: View) {
-//        if (status == 0) {
-//            supportFragmentManager.beginTransaction()
-//                .add(R.id.second_fragment_container, ThirdFragment())
-//                .commit()
-//            status = 1
-//        }else{
-//            status = 0
-//            supportFragmentManager.popBackStack("initial", 0)
-//        }
+        if (status == 0) {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.second_fragment_container, ThirdFragment())
+                .commit()
+            status = 1
+        }else{
+            status = 0
+            supportFragmentManager.popBackStack("initial", 0)
+        }
 
         val intent = Intent(this, )
     }
