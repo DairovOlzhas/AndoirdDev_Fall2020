@@ -8,7 +8,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MailListAdapter(val mails: ArrayList<Mail>, val context: Context): RecyclerView.Adapter<MailListAdapter.MyViewHolder>() {
+class MailListAdapter(
+    val mails: ArrayList<Mail>,
+    val context: Context,
+    val clickListener: ClickListener
+): RecyclerView.Adapter<MailListAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.recycle_view, parent, false)
         return MyViewHolder(view)
@@ -16,8 +20,14 @@ class MailListAdapter(val mails: ArrayList<Mail>, val context: Context): Recycle
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val mail = mails[position]
-        holder.senderText.text = mail.sender
-        holder.recipientText.text = mail.recipient
+        holder.senderNameText.text = mail.sender.fullName
+        holder.senderEmailText.text = mail.sender.email
+        holder.mailDateText.text = mail.date
+
+
+        holder.itemView.setOnClickListener {
+            clickListener.onClickListener(mail)
+        }
         Log.e("UserListAdapter","onBindViewHolder")
     }
 
@@ -26,7 +36,8 @@ class MailListAdapter(val mails: ArrayList<Mail>, val context: Context): Recycle
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var senderText: TextView = itemView.findViewById(R.id.sender_name)
-        var recipientText: TextView = itemView.findViewById(R.id.recipient)
+        var senderNameText: TextView = itemView.findViewById(R.id.sender_name)
+        var senderEmailText: TextView = itemView.findViewById(R.id.sender_email)
+        var mailDateText: TextView = itemView.findViewById(R.id.send_date)
     }
 }
